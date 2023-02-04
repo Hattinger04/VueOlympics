@@ -1,27 +1,28 @@
 <template>
   <header>
+    Dashboard Olympia
   </header>
+  <CountryDropdownComp></CountryDropdownComp>
+  <div class="container">
+    <div class="row">
+      <div class="col−sm">
+        <TableComp></TableComp>
+        <PlotlyComp></PlotlyComp>
+      </div>
+    </div>
+  </div>
 
-  <main>
-    <TableComp></TableComp>
-  </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+header {
+  font-size: x-large;
 }
 </style>
 
 <script setup>
-import TableComp from "./components/TableComp.vue"
+import PlotlyComp from "./components/PlotlyComp.vue";
+import TableComp from "./components/TableComp.vue";
+import CountryDropdownComp from "./components/CountryDropdownComp.vue"
 </script>
-

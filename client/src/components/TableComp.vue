@@ -3,20 +3,34 @@
   <DataTable class="table table−hover table−striped" width="100%" :data="medals">
     <thead>
       <tr>
-        Hi
+        <th v-for="c in columns">{{ c }} </th>
       </tr>
     </thead>
     <tfoot>
-      No
     </tfoot>
   </DataTable>
 </template>
 
-<script setup>
+<script>
 import DataTable from "datatables.net-vue3";
+import DataTablesLib from 'datatables.net-bs5'
+DataTable.use(DataTablesLib)
+export default {
+  components: {
+    DataTable
+  }, 
+  data() {
+    return {
+      columns: ["Name", "Count"],
+      medals: [[ "Bronze", 6553],
+              [ "Gold", 6329 ],
+              [ "Silver", 6269 ]]
+    }
+  }
+}
 </script>
 
 <style scoped>
-@import "bootstrap";
-@import "datatables.net-bs5";
+  @import "bootstrap";
+  @import "datatables.net-bs5";
 </style>
